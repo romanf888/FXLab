@@ -1,10 +1,10 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>FXLab – Presets & FX</title>
-  <link rel="icon" type="image/x-icon" href="favicon.ico">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>FXLab – Bibliothèque de ressources</title>
+  <link rel="icon" type="image/png" href="favicon.ico" />
   <style>
     body {
       margin: 0;
@@ -20,6 +20,7 @@
       justify-content: space-between;
       align-items: center;
       border-bottom: 1px solid #111;
+      position: relative;
     }
 
     header h1 {
@@ -28,15 +29,57 @@
       margin: 0;
     }
 
+    nav {
+      position: relative;
+    }
+
+    nav ul {
+      list-style: none;
+      margin: 0;
+      padding: 0;
+      display: flex;
+      gap: 25px;
+    }
+
+    nav ul li {
+      position: relative;
+    }
+
     nav a {
       color: #fff;
       text-decoration: none;
-      margin-left: 25px;
       font-weight: 500;
       transition: color 0.3s;
     }
 
     nav a:hover {
+      color: #0ff;
+    }
+
+    nav ul li:hover .dropdown {
+      display: block;
+    }
+
+    .dropdown {
+      display: none;
+      position: absolute;
+      background: #111;
+      top: 30px;
+      left: 0;
+      padding: 10px;
+      border-radius: 8px;
+      z-index: 10;
+      min-width: 150px;
+    }
+
+    .dropdown a {
+      display: block;
+      padding: 8px 0;
+      color: #fff;
+      text-decoration: none;
+    }
+
+    .dropdown a:hover {
       color: #0ff;
     }
 
@@ -69,6 +112,12 @@
       margin-bottom: 30px;
     }
 
+    h4 {
+      margin-top: 40px;
+      color: #0ff;
+      font-size: 1.5rem;
+    }
+
     .preset {
       background-color: #111;
       border-radius: 12px;
@@ -99,6 +148,72 @@
       background-color: #0cc;
     }
 
+    .contributors {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 20px;
+    }
+
+    .contributor {
+      background: #111;
+      border-radius: 12px;
+      padding: 20px;
+      flex: 1 1 200px;
+      text-align: center;
+    }
+
+    .contributor img {
+      width: 80px;
+      height: 80px;
+      border-radius: 50%;
+      margin-bottom: 10px;
+    }
+
+    .contributor h4 {
+      margin: 0;
+      font-size: 1.2rem;
+      color: #0ff;
+    }
+
+    .contributor a {
+      display: inline-block;
+      margin-top: 5px;
+      color: #fff;
+      text-decoration: none;
+      font-size: 0.9rem;
+    }
+
+    .contributor a:hover {
+      color: #0ff;
+    }
+
+    form {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      max-width: 500px;
+      margin: auto;
+    }
+
+    input, textarea {
+      padding: 10px;
+      border-radius: 6px;
+      border: none;
+      outline: none;
+      font-size: 1rem;
+    }
+
+    input[type="submit"] {
+      background: #0ff;
+      color: #000;
+      font-weight: bold;
+      cursor: pointer;
+    }
+
+    input[type="submit"]:hover {
+      background: #0cc;
+    }
+
     footer {
       background: #111;
       text-align: center;
@@ -112,15 +227,24 @@
         flex-direction: column;
         align-items: flex-start;
       }
-      nav {
-        margin-top: 10px;
+
+      nav ul {
+        flex-direction: column;
+        gap: 10px;
       }
+
       .preset {
         flex-direction: column;
         align-items: flex-start;
       }
+
       .preset a {
         margin-top: 10px;
+      }
+
+      .contributors {
+        flex-direction: column;
+        align-items: center;
       }
     }
   </style>
@@ -130,35 +254,91 @@
   <header>
     <h1>FXLab</h1>
     <nav>
-      <a href="#presets">Presets</a>
-      <a href="#about">À propos</a>
-      <a href="#contact">Contact</a>
+      <ul>
+        <li>
+          <a href="#presets">Presets</a>
+          <div class="dropdown">
+            <a href="#effets">🎞️ Effets</a>
+            <a href="#sons">🔊 Sons</a>
+            <a href="#transitions">⚡ Transitions</a>
+            <a href="#polices">✒️ Polices</a>
+            <a href="#musiques">🎵 Musiques</a>
+            <a href="#médias">🎥 Médias Libres</a>
+          </div>
+        </li>
+        <li><a href="#contributors">Contributeurs</a></li>
+        <li><a href="#about">À propos</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
     </nav>
   </header>
 
   <section class="hero">
     <h2>Élevez vos montages dans une qualité supérieur</h2>
-    <p>Découvrer une bibliothèque complète de preset, effets, transitions pour vos logiciel de montages et tout ça gratuitement.</p>
+    <p>Découvrer une bibliothèque complète de preset, effets, transitions pour vos logiciel de montages et tout ça gratuitement !!!</p>
   </section>
 
   <section id="presets" class="section">
     <h3>Nos Presets</h3>
 
+    <h4 id="effets">🎞️ Effets</h4>
     <div class="preset">
-      <p>Pack FX #1 – Pack TierMaker romanf888</p>
+      <p>Effet VHS – CapCut</p>
+      <a href="https://drive.google.com/effet-vhs" target="_blank">Télécharger</a>
+    </div>
+
+    <h4 id="sons">🔊 Sons</h4>
+    <div class="preset">
+      <p>Pack de bruitages – Studio FX</p>
+      <a href="https://mega.nz/sons-fx" target="_blank">Télécharger</a>
+    </div>
+
+    <h4 id="transitions">⚡ Transitions</h4>
+    <div class="preset">
+      <p>Transitions dynamiques – Premiere Pro</p>
+      <a href="https://dropbox.com/transition-pack" target="_blank">Télécharger</a>
+    </div>
+
+    <h4 id="polices">✒️ Polices d’écriture</h4>
+    <div class="preset">
+      <p>Pack de polices Star Wars</p>
+      <p>Créateur : Dafont 🌐</p>
+      <p>Mise à jour : 21/04/12</p>
+      <a href="https://www.dafont.com/fr/star-jedi.font" target="_blank">Télécharger</a>
+    </div>
+
+    <h4 id="musiques">🎵 Musiques de fond</h4>
+    <div class="preset">
+      <p>Pack Music Youtubeur Minecraft</p>
+      <p>Créateur : ATrashCan 🌐</p>
+      <p>Mise à jour : 03/04/19</p>
+      <a href="https://drive.google.com/drive/folders/12WOY9GSO-vzHcJGz19avpRdbGQsEaAmz?usp=sharing" target="_blank">Télécharger</a>
+    </div>
+
+    <h4 id="médias">🎥 Médias Libres</h4>
+    <div class="preset">
+      <p>Pack TierMaker de romanf888</p>
+      <p>Créateur : romanf888 ✅</p>
+      <p>Mise à jour : 25/07/25</p>
       <a href="https://drive.google.com/drive/folders/1tcrS1Jj2-9IE_GbgFzef-gg52tqyEdYy?usp=sharing" target="_blank">Télécharger</a>
     </div>
+  </section>
 
-    <div class="preset">
-      <p>Pack FX #2 – Color grading pour Premiere Pro</p>
-      <a href="https://mega.nz/tonlienici" target="_blank">Télécharger</a>
+  <section id="contributors" class="section">
+    <h3>Contributeurs</h3>
+    <div class="contributors">
+      <div class="contributor">
+        <img src="romanf888.PNG" alt="Profil 1" />
+        <h4>romanf888</h4>
+        <a href="https://www.youtube.com/@romanf888" target="_blank">YouTube</a>
+      </div>
+      <div class="contributor">
+        <img src="img/profil2.png" alt="Profil 2" />
+        <h4>Léo</h4>
+        <a href="https://instagram.com/leo" target="_blank">Instagram</a>
+      </div>
+      <!-- Ajoute d'autres contributeurs ici -->
     </div>
-
-    <div class="preset">
-      <p>Pack FX #3 – LUTs + Effets Filmora</p>
-      <a href="https://dropbox.com/tonlienici" target="_blank">Télécharger</a>
-    </div>
-
   </section>
 
   <section id="about" class="section">
@@ -168,7 +348,12 @@
 
   <section id="contact" class="section">
     <h3>Contact</h3>
-    <p>Une question ? Une collaboration ? Écrivez-nous : <a href="mailto:roman.ferriere4@gmail.com" style="color:#0ff;">roman.ferriere4@gmail.com</a></p>
+    <form>
+      <input type="text" placeholder="Nom" required />
+      <input type="email" placeholder="Email" required />
+      <textarea placeholder="Votre message..." rows="5" required></textarea>
+      <input type="submit" value="Envoyer" />
+    </form>
   </section>
 
   <footer>
