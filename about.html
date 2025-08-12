@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>FXLab – À propos</title>
+  <link rel="icon" type="image/x-icon" href="favicon.ico" />
+  <style>
+    :root{
+      --bg: #000;
+      --card: #111;
+      --muted: #bbb;
+      --accent: #0ff;
+    }
+
+    body{
+      margin:0;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+      background: var(--bg);
+      color: #fff;
+      -webkit-font-smoothing:antialiased;
+      -moz-osx-font-smoothing:grayscale;
+    }
+
+    header{
+      background: var(--bg);
+      padding: 20px 40px;
+      display:flex;
+      justify-content:space-between;
+      align-items:center;
+      border-bottom:1px solid #111;
+    }
+
+    header h1{ margin:0; color:var(--accent); font-size:1.6rem; }
+
+    nav a{
+      color:#fff; text-decoration:none; margin-left:22px; font-weight:500;
+    }
+    nav a:hover{ color:var(--accent); }
+
+    .about-container{
+      max-width:1100px;
+      margin: 40px auto;
+      padding: 20px;
+    }
+
+    .about-hero {
+      text-align:center;
+      padding: 30px 20px;
+      margin-bottom: 30px;
+    }
+
+    .about-hero h2{ color:var(--accent); font-size:2.4rem; margin:0 0 10px; }
+    .about-hero p{ color:var(--muted); max-width:900px; margin:0 auto; line-height:1.6; }
+
+    /* TIMELINE */
+    .timeline {
+      position: relative;
+      margin: 50px 0;
+      padding: 10px 0;
+    }
+
+    /* vertical line placed centrally (desktop), behind content */
+    .timeline::before{
+      content: "";
+      position: absolute;
+      left: 50%;
+      top: 0;
+      bottom: 0;
+      transform: translateX(-50%);
+      width: 4px;
+      background: var(--accent);
+      z-index: 0; /* BEHIND timeline items */
+      border-radius: 4px;
+    }
+
+    .timeline-item{
+      position: relative;
+      width: 50%;
+      padding: 20px 40px;
+      box-sizing: border-box;
+    }
+
+    .timeline-item.left{ left: 0; }
+    .timeline-item.right{ left: 50%; }
+
+    /* the dot that links the item to the central line */
+    .timeline-item::after{
+      content: "";
+      position: absolute;
+      top: 32px;
+      width: 18px;
+      height: 18px;
+      border-radius: 50%;
+      background: var(--accent);
+      border: 3px solid var(--bg); /* give ring matching background for "cut-out" look */
+      z-index: 2; /* above the vertical line */
+    }
+    .timeline-item.left::after{ right: -9px; }
+    .timeline-item.right::after{ left: -9px; }
+
+    .timeline-content{
+      position: relative;
+      background: var(--card);
+      padding: 18px;
+      border-radius: 10px;
+      box-shadow: 0 6px 18px rgba(0,0,0,0.6);
+      z-index: 1; /* above vertical line so text isn't overlapped */
+    }
+
+    .timeline-content h3{ margin: 0 0 6px; color: var(--accent); }
+    .timeline-content p{ margin: 0; color: var(--muted); line-height:1.6; }
+
+    /* optional image inside timeline item */
+    .timeline-img {
+      width: 100%;
+      height: auto;
+      border-radius: 8px;
+      display: block;
+      margin-bottom: 12px;
+    }
+
+    /* small devices: make items full width and move line to left */
+    @media (max-width: 900px){
+      .timeline::before{
+        left: 28px;
+        transform: none;
+      }
+      .timeline-item{
+        width: 100%;
+        padding-left: 70px;
+        padding-right: 20px;
+      }
+      .timeline-item.right{
+        left: 0;
+      }
+      .timeline-item.left{
+        left: 0;
+      }
+      .timeline-item::after{
+        left: 20px; right: auto;
+        top: 28px;
+      }
+      .timeline-content {
+        text-align: left;
+      }
+    }
+
+    /* mission/vision blocks */
+    .mission {
+      margin-top: 40px;
+      padding: 30px;
+      background: var(--card);
+      border-radius: 12px;
+      box-shadow: 0 6px 18px rgba(0,0,0,0.6);
+    }
+    .mission h3 { color: var(--accent); margin-top: 0; }
+    .mission p { color: var(--muted); line-height:1.6; }
+
+    footer{
+      margin-top:40px;
+      background: #111;
+      padding: 22px;
+      text-align:center;
+      color:#777;
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <h1>FXLab</h1>
+    <nav>
+      <a href="index.html">Accueil</a>
+      <a href="presets.html">Presets</a>
+      <a href="contributors.html">Contributeurs</a>
+      <a href="about.html">À propos</a>
+      <a href="contact.html">Contact</a>
+    </nav>
+  </header>
+
+  <main class="about-container">
+    <section class="about-hero">
+      <h2>Notre histoire</h2>
+      <p>
+        FXLab est créé par romanf888 lui même pour aider et simplifier le travail des monteurs débutants comme pros,
+        sans demander d'argent en retour car l'entièreté du contenu sur le site est gratuit. Si vous voulez en savoir plus
+        sur l'histoire de ce site consulter notre aventure ci-dessous.
+      </p>
+    </section>
+
+    <!-- TIMELINE -->
+    <section class="timeline" aria-label="Historique FXLab">
+      <article class="timeline-item left" aria-hidden="false">
+        <div class="timeline-content">
+          <!-- Si tu veux ajouter une image : décommente et mets ton fichier dans images/ -->
+          <!-- <img src="images/timeline-2023.jpg" alt="Début" class="timeline-img"> -->
+          <h3>Décembre 2024 — L'idée</h3>
+          <p>Une idée est venu en tête à romanf888 de créé un gigantesque bibliothèque de ressources créatives pour simplifier la tache dans les montages et miniatures.</p>
+        </div>
+      </article>
+
+      <article class="timeline-item right">
+        <div class="timeline-content">
+          <!-- <img src="images/timeline-2024.jpg" alt="Lancement" class="timeline-img"> -->
+          <h3>Février 2025 — Evolution de l'idée reçu</h3>
+          <p>Au lieu de créé une bibliothèque personnelle, pourquoi pas la rendre publique et gratuite. Le lancement de plusieurs petits projets web personnelle pour se familiariser dans le codage avant de s'attaquer à un gros projet comme celui-ci.</p>
+        </div>
+      </article>
+
+      <article class="timeline-item left">
+        <div class="timeline-content">
+          <!-- <img src="images/timeline-2025.jpg" alt="Communauté" class="timeline-img"> -->
+          <h3>Juillet 2025 — Lancement du projet LXLab</h3>
+          <p>Le nom du site est trouvé, l'idée est parfaite, manque plus qu'à créé le site web qui a eu 2 disign avant celui-ci qui ont été corrigé car il contenaits des bug visuels et des bugs de cliques.</p>
+        </div>
+      </article>
+
+      <article class="timeline-item right">
+        <div class="timeline-content">
+          <!-- <img src="images/timeline-2024.jpg" alt="Lancement" class="timeline-img"> -->
+          <h3>Aout 2025 — Finalisation du projet</h3>
+          <p>Après un mois de travail sur l'interface du site et l'ajout de contenu sur le site, nous avons l'honneur de vous présentez le site finit et prêt à l'emploi.</p>
+        </div>
+      </article>
+
+      <!-- Ajoute d'autres étapes ici en alternant .left et .right -->
+    </section>
+
+    <!-- MISSION / VISION -->
+    <section class="mission" aria-labelledby="mission-title">
+      <h3 id="mission-title">Notre mission</h3>
+      <p>
+        Simplifier le montage vidéo et le montage photo en proposant une bibliothèque de ressources
+        gratuite et sans abonnements pour être ouvert à plus de créateurs ou de monteurs.
+      </p>
+    </section>
+
+  </main>
+
+  <footer>
+    © 2025 FXLab et romanf888 studio's – Tous droits réservés.
+  </footer>
+
+</body>
+</html>

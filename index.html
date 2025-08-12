@@ -1,16 +1,16 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>FXLab – Bibliothèque de ressources</title>
-  <link rel="icon" type="image/png" href="favicon.ico" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>FXLab – Accueil</title>
+  <link rel="icon" type="image/x-icon" href="favicon.ico">
   <style>
     body {
-      margin: 0;
-      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
       background-color: #000;
       color: #fff;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+      margin: 0;
     }
 
     header {
@@ -20,7 +20,6 @@
       justify-content: space-between;
       align-items: center;
       border-bottom: 1px solid #111;
-      position: relative;
     }
 
     header h1 {
@@ -29,25 +28,10 @@
       margin: 0;
     }
 
-    nav {
-      position: relative;
-    }
-
-    nav ul {
-      list-style: none;
-      margin: 0;
-      padding: 0;
-      display: flex;
-      gap: 25px;
-    }
-
-    nav ul li {
-      position: relative;
-    }
-
     nav a {
       color: #fff;
       text-decoration: none;
+      margin-left: 25px;
       font-weight: 500;
       transition: color 0.3s;
     }
@@ -56,162 +40,67 @@
       color: #0ff;
     }
 
-    nav ul li:hover .dropdown {
-      display: block;
-    }
-
-    .dropdown {
-      display: none;
-      position: absolute;
-      background: #111;
-      top: 30px;
-      left: 0;
-      padding: 10px;
-      border-radius: 8px;
-      z-index: 10;
-      min-width: 150px;
-    }
-
-    .dropdown a {
-      display: block;
-      padding: 8px 0;
-      color: #fff;
-      text-decoration: none;
-    }
-
-    .dropdown a:hover {
-      color: #0ff;
-    }
-
+    /* Hero section */
     .hero {
       text-align: center;
-      padding: 80px 20px;
+      padding: 80px 20px 50px;
     }
 
     .hero h2 {
       font-size: 3rem;
-      color: #fff;
+      margin-bottom: 10px;
+      color: #0ff;
     }
 
     .hero p {
-      color: #ccc;
       font-size: 1.2rem;
+      color: #aaa;
       max-width: 700px;
-      margin: 20px auto;
-    }
-
-    .section {
-      padding: 60px 20px;
-      max-width: 1000px;
       margin: auto;
     }
 
-    .section h3 {
-      font-size: 2rem;
-      color: #0ff;
-      margin-bottom: 30px;
+    /* Grille articles */
+    .content-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 30px;
+      padding: 40px 20px;
+      max-width: 1200px;
+      margin: auto;
     }
 
-    h4 {
-      margin-top: 40px;
-      color: #0ff;
-      font-size: 1.5rem;
-    }
-
-    .preset {
+    .content-card {
       background-color: #111;
-      border-radius: 12px;
+      border-radius: 15px;
+      overflow: hidden;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.3);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .content-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 6px 25px rgba(0,255,255,0.2);
+    }
+
+    .content-card img {
+      width: 100%;
+      height: 180px;
+      object-fit: cover;
+    }
+
+    .content-card .card-body {
       padding: 20px;
-      margin-bottom: 20px;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      flex-wrap: wrap;
     }
 
-    .preset p {
-      margin: 0;
-      font-weight: 500;
-    }
-
-    .preset a {
-      background-color: #0ff;
-      color: #000;
-      padding: 10px 20px;
-      border-radius: 8px;
-      text-decoration: none;
-      font-weight: bold;
-      transition: background 0.3s;
-    }
-
-    .preset a:hover {
-      background-color: #0cc;
-    }
-
-    .contributors {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 20px;
-    }
-
-    .contributor {
-      background: #111;
-      border-radius: 12px;
-      padding: 20px;
-      flex: 1 1 200px;
-      text-align: center;
-    }
-
-    .contributor img {
-      width: 80px;
-      height: 80px;
-      border-radius: 50%;
-      margin-bottom: 10px;
-    }
-
-    .contributor h4 {
-      margin: 0;
-      font-size: 1.2rem;
-      color: #0ff;
-    }
-
-    .contributor a {
-      display: inline-block;
-      margin-top: 5px;
+    .content-card h3 {
+      margin: 0 0 10px;
+      font-size: 1.4rem;
       color: #fff;
-      text-decoration: none;
-      font-size: 0.9rem;
     }
 
-    .contributor a:hover {
-      color: #0ff;
-    }
-
-    form {
-      display: flex;
-      flex-direction: column;
-      gap: 10px;
-      max-width: 500px;
-      margin: auto;
-    }
-
-    input, textarea {
-      padding: 10px;
-      border-radius: 6px;
-      border: none;
-      outline: none;
-      font-size: 1rem;
-    }
-
-    input[type="submit"] {
-      background: #0ff;
-      color: #000;
-      font-weight: bold;
-      cursor: pointer;
-    }
-
-    input[type="submit"]:hover {
-      background: #0cc;
+    .content-card p {
+      font-size: 0.95rem;
+      color: #bbb;
     }
 
     footer {
@@ -220,32 +109,7 @@
       padding: 30px 20px;
       font-size: 0.9rem;
       color: #777;
-    }
-
-    @media (max-width: 600px) {
-      header {
-        flex-direction: column;
-        align-items: flex-start;
-      }
-
-      nav ul {
-        flex-direction: column;
-        gap: 10px;
-      }
-
-      .preset {
-        flex-direction: column;
-        align-items: flex-start;
-      }
-
-      .preset a {
-        margin-top: 10px;
-      }
-
-      .contributors {
-        flex-direction: column;
-        align-items: center;
-      }
+      margin-top: 40px;
     }
   </style>
 </head>
@@ -254,115 +118,46 @@
   <header>
     <h1>FXLab</h1>
     <nav>
-      <ul>
-        <li>
-          <a href="#presets">Presets</a>
-          <div class="dropdown">
-            <a href="#effets">🎞️ Effets</a>
-            <a href="#sons">🔊 Sons</a>
-            <a href="#transitions">⚡ Transitions</a>
-            <a href="#polices">✒️ Polices</a>
-            <a href="#musiques">🎵 Musiques</a>
-            <a href="#médias">🎥 Médias Libres</a>
-          </div>
-        </li>
-        <li><a href="#contributors">Contributeurs</a></li>
-        <li><a href="#about">À propos</a></li>
-        <li><a href="#contact">Contact</a></li>
-      </ul>
+      <a href="index.html">Accueil</a>
+      <a href="presets.html">Presets</a>
+      <a href="contributors.html">Contributeurs</a>
+      <a href="about.html">À propos</a>
+      <a href="contact.html">Contact</a>
     </nav>
   </header>
 
+  <!-- Section Hero -->
   <section class="hero">
-    <h2>Élevez vos montages dans une qualité supérieur</h2>
+    <h2>Bienvenue sur FXLab</h2>
+    <h3>Élevez vos montages dans une qualité supérieur</h3>
     <p>Découvrer une bibliothèque complète de preset, effets, transitions pour vos logiciel de montages et tout ça gratuitement !!!</p>
   </section>
 
-  <section id="presets" class="section">
-    <h3>Nos Presets</h3>
-
-    <h4 id="effets">🎞️ Effets</h4>
-    <div class="preset">
-      <p>Effet VHS – CapCut</p>
-      <a href="https://drive.google.com/effet-vhs" target="_blank">Télécharger</a>
-    </div>
-
-    <h4 id="sons">🔊 Sons</h4>
-    <div class="preset">
-      <p>Pack de bruitages – Studio FX</p>
-      <a href="https://mega.nz/sons-fx" target="_blank">Télécharger</a>
-    </div>
-
-    <h4 id="transitions">⚡ Transitions</h4>
-    <div class="preset">
-      <p>Smooth Transitions Preset Pack</p>
-      <p>Créateur : Debrup Travel & Films 🌐</p>
-      <p>Mise à jour : 07/12/2018</p>
-      <a href="https://drive.google.com/file/d/1tdREA-tGFz_EKFgXW3NCNWHJDrrkiq9k/view" target="_blank">Télécharger</a>
-    </div>
-
-    <h4 id="polices">✒️ Polices d’écriture</h4>
-    <div class="preset">
-      <p>Pack de polices Star Wars</p>
-      <p>Créateur : Dafont 🌐</p>
-      <p>Mise à jour : 21/04/2012</p>
-      <a href="https://www.dafont.com/fr/star-jedi.font" target="_blank">Télécharger</a>
-    </div>
-
-    <h4 id="musiques">🎵 Musiques de fond</h4>
-    <div class="preset">
-      <p>Pack Music Youtubeur Minecraft</p>
-      <p>Créateur : ATrashCan 🌐</p>
-      <p>Mise à jour : 03/04/2019</p>
-      <a href="https://drive.google.com/drive/folders/12WOY9GSO-vzHcJGz19avpRdbGQsEaAmz?usp=sharing" target="_blank">Télécharger</a>
-    </div>
-
-    <h4 id="médias">🎥 Médias Libres</h4>
-    <div class="preset">
-      <p>Pack Wallpaper Jeux Vidéo (Tiermaker)</p>
-      <p>Créateur : romanf888 ✅</p>
-      <p>Mise à jour : 25/07/2025</p>
-      <a href="https://drive.google.com/drive/folders/1Or9k8pXCYIXP8afcAVGFITjqgcaYteWl?usp=sharing" target="_blank">Télécharger</a>
-    </div>
-
-    <div class="preset">
-      <p>Pack photos de Youtubeur (TierMaker)</p>
-      <p>Créateur : romanf888 ✅</p>
-      <p>Mise à jour : 04/06/2024</p>
-      <a href="https://drive.google.com/drive/folders/1rkk2cnZv1YM_CWG0DwI0sqtJLWTuQOmo?usp=sharing" target="_blank">Télécharger</a>
-    </div>
-  </section>
-
-  <section id="contributors" class="section">
-    <h3>Contributeurs</h3>
-    <div class="contributors">
-      <div class="contributor">
-        <img src="romanf888.PNG" alt="Profil 1" />
-        <h4>romanf888</h4>
-        <a href="https://www.youtube.com/@romanf888" target="_blank">YouTube</a>
+  <!-- Zone de contenu -->
+  <section class="content-grid">
+    <div class="content-card">
+      <img src="pictures/Devenez romanf888 à partir de maintenant !!!.jpg" alt="Image article">
+      <div class="card-body">
+        <h3>La nostalgie de 2023 revient ?</h3>
+        <p>Retrouver notre pack de bannière de romanf888 datant de 2023 dans notre page presets du site !!!</p>
       </div>
-      <div class="contributor">
-        <img src="Club_Fortnite_IA.png" alt="Profil 2" />
-        <h4>Club Fortnite</h4>
-        <a href="https://discord.gg/S8v7R2SSB9" target="_blank">Serveur Discord</a>
-      </div>
-      <!-- Ajoute d'autres contributeurs ici -->
     </div>
-  </section>
 
-  <section id="about" class="section">
-    <h3>À propos</h3>
-    <p>FXLab est un studio créatif dédié à la production de presets et d’effets pour monteurs vidéo. Que vous soyez sur CapCut, Premiere Pro ou Filmora, nous vous offrons des ressources de qualité, prêtes à l’emploi.</p>
-  </section>
+    <div class="content-card">
+      <img src="pictures/tiermaker.jpg" alt="Image article">
+      <div class="card-body">
+        <h3>Besoin de faire une Tierlist ?</h3>
+        <p>Nous avons créé 2 packs spécial TierMaker pour l'occasion (Attention ! Les images sont uniquement issus des vidéos TierMaker de romanf888).</p>
+      </div>
+    </div>
 
-  <section id="contact" class="section">
-    <h3>Contact</h3>
-    <form>
-      <input type="text" placeholder="Nom" required />
-      <input type="email" placeholder="Email" required />
-      <textarea placeholder="Votre message..." rows="5" required></textarea>
-      <input type="submit" value="Envoyer" />
-    </form>
+    <div class="content-card">
+      <img src="pictures/sw3_picture.png" alt="Image article">
+      <div class="card-body">
+        <h3>Fan de Star Wars ?</h3>
+        <p>Une police d'écriture spécialement sur Star Wars créé par Dafont est disponible sur le site venant des titres de la saga la plus mythique du monde !!!</p>
+      </div>
+    </div>
   </section>
 
   <footer>

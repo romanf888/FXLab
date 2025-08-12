@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>FXLab – Presets & FX</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="icon" type="image/x-icon" href="favicon.ico">
+  <style>
+    body {
+      background-color: #000;
+      color: #fff;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+      margin: 0;
+    }
+
+    header {
+      background-color: #000;
+      padding: 20px 40px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      border-bottom: 1px solid #111;
+    }
+
+    header h1 {
+      font-size: 1.8rem;
+      color: #0ff;
+      margin: 0;
+    }
+
+    nav a {
+      color: #fff;
+      text-decoration: none;
+      margin-left: 25px;
+      font-weight: 500;
+      transition: color 0.3s;
+    }
+
+    nav a:hover {
+      color: #0ff;
+    }
+
+    main {
+      padding: 40px 20px;
+      max-width: 1200px;
+      margin: auto;
+    }
+
+    h2 {
+      font-size: 2.5rem;
+      text-align: center;
+      margin-bottom: 20px;
+      color: #0ff;
+    }
+
+    /* Filtres */
+    .filters {
+      text-align: center;
+      margin-bottom: 40px;
+    }
+
+    .filter-btn {
+      background-color: transparent;
+      border: 1px solid #0ff;
+      color: #0ff;
+      padding: 10px 18px;
+      margin: 5px;
+      border-radius: 8px;
+      cursor: pointer;
+      font-size: 0.95rem;
+      transition: all 0.3s ease;
+    }
+
+    .filter-btn:hover,
+    .filter-btn.active {
+      background-color: #0ff;
+      color: #000;
+    }
+
+    /* Grille de cartes */
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 30px;
+    }
+
+    .card {
+      background-color: #111;
+      border-radius: 15px;
+      overflow: hidden;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.3);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 6px 25px rgba(0,255,255,0.2);
+    }
+
+    .card img {
+      width: 100%;
+      height: 180px;
+      object-fit: cover;
+      background: #222;
+    }
+
+    .card-content {
+      padding: 20px;
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+
+    .card h3 {
+      margin: 0 0 10px;
+      color: #fff;
+    }
+
+    .creator {
+      font-size: 0.9rem;
+      color: #0ff;
+      margin-bottom: 10px;
+    }
+
+    .desc {
+      font-size: 0.95rem;
+      color: #ccc;
+      margin-bottom: 20px;
+    }
+
+    .download-btn {
+      background-color: #0ff;
+      color: #000;
+      padding: 12px;
+      border-radius: 8px;
+      text-align: center;
+      font-weight: bold;
+      text-decoration: none;
+      transition: background 0.3s ease;
+    }
+
+    .download-btn:hover {
+      background-color: #0cc;
+    }
+
+    footer {
+      background: #111;
+      text-align: center;
+      padding: 30px 20px;
+      font-size: 0.9rem;
+      color: #777;
+      margin-top: 40px;
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <h1>FXLab</h1>
+    <nav>
+      <a href="index.html">Accueil</a>
+      <a href="presets.html">Presets</a>
+      <a href="contributors.html">Contributeurs</a>
+      <a href="about.html">À propos</a>
+      <a href="contact.html">Contact</a>
+    </nav>
+  </header>
+
+  <main>
+    <h2>Nos Presets</h2>
+
+    <!-- Filtres -->
+    <div class="filters">
+      <button class="filter-btn active" onclick="filterSelection('all')">Tout</button>
+      <button class="filter-btn" onclick="filterSelection('effets')">Effets/Transitions</button>
+      <button class="filter-btn" onclick="filterSelection('pack')">Pack de montages</button>
+      <button class="filter-btn" onclick="filterSelection('sons')">Sons/Musiques</button>
+      <button class="filter-btn" onclick="filterSelection('polices')">Polices</button>
+      <button class="filter-btn" onclick="filterSelection('images')">Images</button>
+    </div>
+
+    <div class="grid">
+      <div class="card images">
+        <img src="pictures/tiermaker.jpg" alt="Aperçu Pack Wallpaper Jeux Vidéo (Tiermaker)">
+        <div class="card-content">
+          <h3>Pack Wallpaper Jeux Vidéo (Tiermaker)</h3>
+          <p class="creator">Créé par: romanf888</p>
+          <p class="desc">Une collection d'image de couverture de Jeux Vidéo en dimension de 500x500.</p>
+          <a href="https://drive.google.com/drive/folders/1Or9k8pXCYIXP8afcAVGFITjqgcaYteWl?usp=sharing" target="_blank" class="download-btn">📥 Télécharger</a>
+        </div>
+      </div>
+
+      <div class="card images">
+        <img src="pictures/tiermaker.jpg" alt="Aperçu Pack PDP YouTubeurs (Tiermaker)">
+        <div class="card-content">
+          <h3>Pack PDP YouTubeurs (Tiermaker)</h3>
+          <p class="creator">Créé par: romanf888</p>
+          <p class="desc">Une collection de photo de profil de YouTubeurs utilisé en vidéo de TierMaker en dimension de 500x500.</p>
+          <a href="https://drive.google.com/drive/folders/1rkk2cnZv1YM_CWG0DwI0sqtJLWTuQOmo?usp=sharing" target="_blank" class="download-btn">📥 Télécharger</a>
+        </div>
+      </div>
+
+      <div class="card pack">
+        <img src="pictures/Devenez romanf888 à partir de maintenant !!!.jpg" alt="Aperçu Pack bannière de romanf888 (2023)">
+        <div class="card-content">
+          <h3>Pack bannière de romanf888 (2023)</h3>
+          <p class="creator">Créé par: romanf888</p>
+          <p class="desc">Soyez nostagiques avec ce pack de la bannière de romanf888 qui possèdait en 2023. (GIMP Requiert)</p>
+          <a href="https://mega.nz/file/Qjdy0YTI#4BqcVX2KXqeOREMle0lyap_K_DJFAb6nebUy-fwACsQ" target="_blank" class="download-btn">📥 Télécharger</a>
+        </div>
+      </div>
+
+      <div class="card polices">
+        <img src="pictures/sw3_picture.png" alt="Aperçu Pack de polices Star Wars">
+        <div class="card-content">
+          <h3>Pack de polices Star Wars</h3>
+          <p class="creator">Créé par: Dafont</p>
+          <p class="desc">Des polices d'écriture uniques pour vos vidéos.</p>
+          <a href="https://www.dafont.com/fr/star-jedi.font" target="_blank" class="download-btn">📥 Télécharger</a>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <footer>
+    © 2025 FXLab et romanf888 studio's – Tous droits réservés.
+  </footer>
+
+  <script>
+    function filterSelection(category) {
+      let cards = document.querySelectorAll('.card');
+      let buttons = document.querySelectorAll('.filter-btn');
+
+      buttons.forEach(btn => btn.classList.remove('active'));
+      event.target.classList.add('active');
+
+      if (category === 'all') {
+        cards.forEach(card => card.style.display = 'flex');
+      } else {
+        cards.forEach(card => {
+          card.style.display = card.classList.contains(category) ? 'flex' : 'none';
+        });
+      }
+    }
+  </script>
+
+</body>
+</html>
