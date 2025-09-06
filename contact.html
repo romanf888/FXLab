@@ -1,172 +1,74 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
   <title>FXLab – Contact</title>
-  <link rel="icon" type="image/x-icon" href="favicon.ico">
-  <style>
-    body {
-      background-color: #000;
-      color: #fff;
-      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
-      margin: 0;
-    }
-
-    header {
-      background-color: #000;
-      padding: 20px 40px;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      border-bottom: 1px solid #111;
-    }
-
-    header h1 {
-      font-size: 1.8rem;
-      color: #0ff;
-      margin: 0;
-    }
-
-    nav a {
-      color: #fff;
-      text-decoration: none;
-      margin-left: 25px;
-      font-weight: 500;
-      transition: color 0.3s;
-    }
-
-    nav a:hover {
-      color: #0ff;
-    }
-
-    /* Conteneur principal */
-    .contact-container {
-      max-width: 900px;
-      margin: auto;
-      padding: 50px 20px;
-    }
-
-    .contact-container h2 {
-      font-size: 2.5rem;
-      color: #0ff;
-      text-align: center;
-      margin-bottom: 20px;
-    }
-
-    .contact-container p {
-      text-align: center;
-      color: #bbb;
-      max-width: 700px;
-      margin: 0 auto 40px;
-    }
-
-    /* Réseaux sociaux */
-    .social-links {
-      display: flex;
-      justify-content: center;
-      gap: 25px;
-      margin-bottom: 50px;
-    }
-
-    .social-links a img {
-      width: 50px;
-      height: 50px;
-      border-radius: 50%;
-      transition: transform 0.3s ease;
-    }
-
-    .social-links a img:hover {
-      transform: scale(1.15);
-    }
-
-    /* Formulaire */
-    form {
-      background-color: #111;
-      padding: 30px;
-      border-radius: 15px;
-      box-shadow: 0 4px 20px rgba(0,255,255,0.1);
-    }
-
-    form input, form textarea {
-      width: 100%;
-      padding: 15px;
-      margin-bottom: 20px;
-      border: none;
-      border-radius: 8px;
-      background-color: #222;
-      color: #fff;
-      font-size: 1rem;
-    }
-
-    form input:focus, form textarea:focus {
-      outline: 2px solid #0ff;
-    }
-
-    form button {
-      width: 100%;
-      padding: 15px;
-      background-color: #0ff;
-      border: none;
-      border-radius: 8px;
-      font-size: 1.1rem;
-      color: #000;
-      font-weight: bold;
-      cursor: pointer;
-      transition: background-color 0.3s ease;
-    }
-
-    form button:hover {
-      background-color: #00cccc;
-    }
-
-    footer {
-      background: #111;
-      text-align: center;
-      padding: 30px 20px;
-      font-size: 0.9rem;
-      color: #777;
-      margin-top: 40px;
-    }
-  </style>
+  <link rel="icon" href="favicon.ico" type="image/x-icon">
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
+  <!-- Header -->
   <header>
-    <h1>FXLab</h1>
-    <nav>
+    <div class="nav">
+      <div class="brand">
+        <div class="brand-logo"></div>
+        <h1>FXLab</h1>
+      </div>
+      <nav class="links">
+        <a href="index.html">Accueil</a>
+        <a href="presets.html">Presets</a>
+        <a href="news.html">Nouveautés</a>
+        <a href="contributors.html">Contributeurs</a>
+        <a href="about.html">À propos</a>
+        <a href="contact.html" class="cta-small" aria-current="page">Contact</a>
+      </nav>
+      <button class="burger" onclick="toggleMenu()">☰</button>
+    </div>
+    <nav id="mobileNav" class="mobile">
       <a href="index.html">Accueil</a>
       <a href="presets.html">Presets</a>
+      <a href="news.html">Nouveautés</a>
       <a href="contributors.html">Contributeurs</a>
       <a href="about.html">À propos</a>
-      <a href="contact.html">Contact</a>
+      <a href="contact.html" class="cta-small">Contact</a>
     </nav>
   </header>
 
-  <div class="contact-container">
+  <!-- Hero -->
+  <section class="hero">
+    <span class="super">Un projet collaboratif</span>
     <h2>Contactez-nous</h2>
-    <p>Une question, une suggestion ou une proposition de collaboration ?  
-       N’hésitez pas à nous envoyer un message, nous répondons rapidement.</p>
+    <p>Une question, une proposition ou envie de contribuer ? Envoyez-nous un message.</p>
+  </section>
 
-    <!-- Réseaux sociaux -->
-    <div class="social-links">
-      <a href="https://www.youtube.com/@romanf888" target="_blank"><img src="pictures/YouTube_logo.png" alt="YouTube"></a>
-      <a href="https://discord.gg/Errnw5qfYZ" target="_blank"><img src="pictures/Discord_logo.png" alt="Discord"></a>
-      <a href="https://www.tiktok.com/@romanf8888640" target="_blank"><img src="pictures/TikTok_logo.png" alt="TikTok"></a>
-    </div>
-
-    <!-- Formulaire -->
-    <form action="roman.ferriere4@gmail.com" method="post" enctype="text/plain">
-      <input type="text" name="name" placeholder="Votre nom" required>
-      <input type="email" name="email" placeholder="Votre e-mail" required>
-      <textarea name="message" rows="5" placeholder="Votre message" required></textarea>
-      <button type="submit">Envoyer</button>
+  <main class="wrap">
+    <form action="mailto:fxlab@example.com" method="post" enctype="text/plain" style="max-width:600px;margin:0 auto;background:#0b0b0b;border:1px solid #121212;border-radius:16px;padding:20px;display:flex;flex-direction:column;gap:12px;">
+      <input type="text" name="nom" placeholder="Votre nom" required style="padding:12px;border-radius:10px;border:1px solid #222;background:#111;color:#fff">
+      <input type="email" name="email" placeholder="Votre email" required style="padding:12px;border-radius:10px;border:1px solid #222;background:#111;color:#fff">
+      <textarea name="message" rows="5" placeholder="Votre message" required style="padding:12px;border-radius:10px;border:1px solid #222;background:#111;color:#fff"></textarea>
+      <button type="submit" class="btn-primary">Envoyer</button>
     </form>
-  </div>
+
+    <div class="section-head" style="margin-top:40px;">
+      <h3>Nos réseaux</h3>
+    </div>
+    <div class="partners">
+      <a class="partner" href="https://www.youtube.com/@romanf888" target="_blank"><img src="pictures/YouTube_logo.png" alt="YouTube"></a>
+      <a class="partner" href="https://discord.gg/Errnw5qfYZ" target="_blank"><img src="pictures/Discord_logo.png" alt="Discord"></a>
+      <a class="partner" href="https://www.tiktok.com/@romanf8888640" target="_blank"><img src="pictures/TikTok_logo.png" alt="TikTok"></a>
+    </div>
+  </main>
 
   <footer>
-    © 2025 FXLab et romanf888 studio's – Tous droits réservés.
+    © 2025 FXLab et romanf888 studio's – Tous droits réservés
   </footer>
 
+  <script>
+    function toggleMenu(){
+      document.getElementById('mobileNav').classList.toggle('show');
+    }
+  </script>
 </body>
 </html>

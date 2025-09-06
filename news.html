@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>FXLab – Nouveautés</title>
+  <link rel="icon" href="favicon.ico" type="image/x-icon">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- Header -->
+  <header>
+    <div class="nav">
+      <div class="brand">
+        <div class="brand-logo"></div>
+        <h1>FXLab</h1>
+      </div>
+      <nav class="links">
+        <a href="index.html">Accueil</a>
+        <a href="presets.html">Presets</a>
+        <a href="news.html" aria-current="page">Nouveautés</a>
+        <a href="contributors.html">Contributeurs</a>
+        <a href="about.html">À propos</a>
+        <a href="contact.html" class="cta-small">Contact</a>
+      </nav>
+      <button class="burger" onclick="toggleMenu()">☰</button>
+    </div>
+    <nav id="mobileNav" class="mobile">
+      <a href="index.html">Accueil</a>
+      <a href="presets.html">Presets</a>
+      <a href="news.html">Nouveautés</a>
+      <a href="contributors.html">Contributeurs</a>
+      <a href="about.html">À propos</a>
+      <a href="contact.html" class="cta-small">Contact</a>
+    </nav>
+  </header>
+
+  <!-- Hero -->
+  <section class="hero">
+    <span class="super">Dernières annonces et mises à jour</span>
+    <h2>Actualités FXLab</h2>
+    <p>Restez au courant des nouveautés, packs publiés et collaborations.</p>
+  </section>
+
+  <main class="wrap">
+    <div class="grid">
+      <article class="article">
+        <img src="pictures/Tout va changer... (4 ans sur YouTube).jpg" alt="Annonce pack">
+        <span class="label_news">Actualités</span>
+        <div>
+          <h4>Vous avez besoin d'inspiration ?</h4>
+          <p>+150 miniatures disponible dans ce pack d'images venant du YouTubeur romanf888 en personne !!!</p>
+        </div>
+      </article>
+
+      <article class="article">
+        <img src="pictures/Devenez romanf888 à partir de maintenant !!!.jpg" alt="Annonce pack">
+        <span class="label_news">Actualités</span>
+        <div>
+          <h4>La nostalgie de 2023 revient ?</h4>
+          <p>Retrouver notre pack de bannière de romanf888 datant de 2023 dans notre page presets du site !!!</p>
+        </div>
+      </article>
+
+      <article class="article">
+        <img src="pictures/sw3_picture.png" alt="Nouvelle musique">
+        <span class="label_news">Actualités</span>
+        <div>
+          <h4>Fan de Star Wars ?</h4>
+          <p>Une police d'écriture spécialement sur Star Wars créé par Dafont est disponible sur le site venant des titres de la saga la plus mythique du monde !!!</p>
+        </div>
+      </article>
+    </div>
+  </main>
+
+  <footer>
+    © 2025 FXLab et romanf888 studio's – Tous droits réservés
+  </footer>
+
+  <script>
+    function toggleMenu(){
+      document.getElementById('mobileNav').classList.toggle('show');
+    }
+  </script>
+</body>
+</html>

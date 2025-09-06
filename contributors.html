@@ -1,186 +1,78 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
   <title>FXLab – Contributeurs</title>
-  <link rel="icon" type="image/x-icon" href="favicon.ico">
-  <style>
-    body {
-      background-color: #000;
-      color: #fff;
-      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
-      margin: 0;
-    }
-
-    header {
-      background-color: #000;
-      padding: 20px 40px;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      border-bottom: 1px solid #111;
-    }
-
-    header h1 {
-      font-size: 1.8rem;
-      color: #0ff;
-      margin: 0;
-    }
-
-    nav a {
-      color: #fff;
-      text-decoration: none;
-      margin-left: 25px;
-      font-weight: 500;
-      transition: color 0.3s;
-    }
-
-    nav a:hover {
-      color: #0ff;
-    }
-
-    main {
-      padding: 40px 20px;
-      max-width: 1200px;
-      margin: auto;
-    }
-
-    h2 {
-      font-size: 2.5rem;
-      text-align: center;
-      margin-bottom: 40px;
-      color: #0ff;
-    }
-
-    /* Grille contributeurs */
-    .contributors-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-      gap: 30px;
-    }
-
-    .contributor-card {
-      background-color: #111;
-      border-radius: 15px;
-      overflow: hidden;
-      box-shadow: 0 4px 20px rgba(0,0,0,0.3);
-      transition: transform 0.3s ease, box-shadow 0.3s ease;
-      text-align: center;
-      padding: 20px;
-    }
-
-    .contributor-card:hover {
-      transform: translateY(-5px);
-      box-shadow: 0 6px 25px rgba(0,255,255,0.2);
-    }
-
-    .contributor-card img {
-      width: 120px;
-      height: 120px;
-      border-radius: 50%;
-      object-fit: cover;
-      border: 3px solid #0ff;
-      margin-bottom: 15px;
-    }
-
-    .contributor-card h3 {
-      margin: 0;
-      font-size: 1.3rem;
-      color: #fff;
-    }
-
-    .role {
-      font-size: 0.9rem;
-      color: #0ff;
-      margin-bottom: 15px;
-    }
-
-    /* Icônes réseaux */
-    .social-links {
-      display: flex;
-      justify-content: center;
-      gap: 12px;
-    }
-
-    .social-links a {
-      color: #0ff;
-      font-size: 1.3rem;
-      transition: color 0.3s;
-    }
-
-    .social-links a:hover {
-      color: #0cc;
-    }
-
-    footer {
-      background: #111;
-      text-align: center;
-      padding: 30px 20px;
-      font-size: 0.9rem;
-      color: #777;
-      margin-top: 40px;
-    }
-  </style>
-
-  <!-- Icônes FontAwesome -->
-  <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+  <link rel="icon" href="favicon.ico" type="image/x-icon">
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
+  <!-- Header -->
   <header>
-    <h1>FXLab</h1>
-    <nav>
+    <div class="nav">
+      <div class="brand">
+        <div class="brand-logo"></div>
+        <h1>FXLab</h1>
+      </div>
+      <nav class="links">
+        <a href="index.html">Accueil</a>
+        <a href="presets.html">Presets</a>
+        <a href="news.html">Nouveautés</a>
+        <a href="contributors.html" aria-current="page">Contributeurs</a>
+        <a href="about.html">À propos</a>
+        <a href="contact.html" class="cta-small">Contact</a>
+      </nav>
+      <button class="burger" onclick="toggleMenu()">☰</button>
+    </div>
+    <nav id="mobileNav" class="mobile">
       <a href="index.html">Accueil</a>
       <a href="presets.html">Presets</a>
+      <a href="news.html">Nouveautés</a>
       <a href="contributors.html">Contributeurs</a>
       <a href="about.html">À propos</a>
-      <a href="contact.html">Contact</a>
+      <a href="contact.html" class="cta-small">Contact</a>
     </nav>
   </header>
 
-  <main>
-    <h2>Nos Contributeurs</h2>
+  <!-- Hero -->
+  <section class="hero">
+    <span class="super">Notre équipe</span>
+    <h2>Les contributeurs FXLab</h2>
+    <p>Découvrez les créateurs qui enrichissent la plateforme avec leurs ressources.</p>
+  </section>
 
-    <div class="contributors-grid">
-      <div class="contributor-card">
-        <img src="pictures/romanf888.PNG" alt="Photo de romanf888">
-        <h3>romanf888</h3>
-        <p class="role">YouTubeur/Développeur</p>
-        <div class="social-links">
-          <a href="#"><i class="fab fa-twitter"></i></a>
-          <a href="#"><i class="fab fa-github"></i></a>
-          <a href="#"><i class="fab fa-discord"></i></a>
-        </div>
+  <main class="wrap">
+    <div class="grid">
+      <div class="partner">
+        <img src="pictures/romanf888.PNG" alt="romanf888">
+        <h4>romanf888</h4>
+        <p>YouTubeur & Développeur</p>
       </div>
 
-      <div class="contributor-card">
-        <img src="pictures/Club_Fortnite_IA.png" alt="Photo de Club Fortnite">
-        <h3>Club Fortnite</h3>
-        <p class="role">Serveur Discord</p>
-        <div class="social-links">
-          <a href="#"><i class="fab fa-instagram"></i></a>
-          <a href="#"><i class="fab fa-dribbble"></i></a>
-          <a href="#"><i class="fab fa-behance"></i></a>
-        </div>
+      <div class="partner">
+        <img src="pictures/Club_Fortnite_IA.png" alt="Club Fortnite">
+        <h4>Club Fortnite</h4>
+        <p>Serveur Discord</p>
       </div>
 
-      <div class="contributor-card">
-        <img src="pictures/Fxlab.png" alt="Photo de FXLab">
-        <h3>FXLab For Creator</h3>
-        <p class="role">Serveur Discord/Site Web</p>
-        <div class="social-links">
-          <a href="#"><i class="fab fa-youtube"></i></a>
-          <a href="#"><i class="fab fa-tiktok"></i></a>
-          <a href="#"><i class="fab fa-facebook"></i></a>
-        </div>
+      <div class="partner">
+        <img src="pictures/Fxlab.png" alt="FXLab For Creator">
+        <h4>FXLab For Creator</h4>
+        <p>Serveur Discord & Site Web</p>
       </div>
     </div>
   </main>
 
   <footer>
-    © 2025 FXLab et romanf888 studio's – Tous droits réservés.
+    © 2025 FXLab et romanf888 studio's – Tous droits réservés
   </footer>
 
+  <script>
+    function toggleMenu(){
+      document.getElementById('mobileNav').classList.toggle('show');
+    }
+  </script>
 </body>
 </html>
