@@ -94,7 +94,7 @@
         <a href="about.html" aria-current="page">À propos</a>
         <a href="contact.html" class="cta-small">Contact</a>
       </nav>
-      <button class="burger" onclick="toggleMenu()">☰</button>
+      <button class="burger" onclick="toggleMenu()" aria-label="Ouvrir le menu" aria-expanded="false" aria-controls="mobileNav">☰</button>
     </div>
     <nav id="mobileNav" class="mobile">
       <a href="index.html">Accueil</a>
@@ -153,11 +153,6 @@
   <footer>
     © 2025 FXLab et romanf888 studio's – Tous droits réservés
   </footer>
-
-  <script>
-    function toggleMenu(){
-      document.getElementById('mobileNav').classList.toggle('show');
-    }
-  </script>
+  <script src="script.js"></script>
 </body>
 </html>
