@@ -50,7 +50,7 @@
         <a href="about.html">À propos</a>
         <a href="contact.html" class="cta-small">Contact</a>
       </nav>
-      <button class="burger" onclick="toggleMenu()">☰</button>
+      <button class="burger" onclick="toggleMenu()" aria-label="Ouvrir le menu" aria-expanded="false" aria-controls="mobileNav">☰</button>
     </div>
     <nav id="mobileNav" class="mobile">
       <a href="index.html">Accueil</a>
@@ -70,13 +70,14 @@
   </section>
 
   <!-- Filtres -->
-  <div class="filters">
-    <button class="filter-btn active" onclick="filterPresets('all')">Tout</button>
-    <button class="filter-btn" onclick="filterPresets('transitions')">Effets/Transitions</button>
-    <button class="filter-btn" onclick="filterPresets('packs')">Pack de montages</button>
-    <button class="filter-btn" onclick="filterPresets('sons')">Sons/Musiques</button>
-    <button class="filter-btn" onclick="filterPresets('polices')">Polices</button>
-    <button class="filter-btn" onclick="filterPresets('images')">Images</button>
+  <div class="filters" id="presetFilters">
+    <input id="presetSearch" type="search" placeholder="Rechercher un preset..." aria-label="Rechercher un preset" class="preset-search">
+    <button class="filter-btn active" data-category="all">Tout</button>
+    <button class="filter-btn" data-category="transitions">Effets/Transitions</button>
+    <button class="filter-btn" data-category="packs">Pack de montages</button>
+    <button class="filter-btn" data-category="sons">Sons/Musiques</button>
+    <button class="filter-btn" data-category="polices">Polices</button>
+    <button class="filter-btn" data-category="images">Images</button>
   </div>
 
   <main class="wrap">
@@ -196,26 +197,6 @@
   <footer>
     © 2025 FXLab et romanf888 studio's – Tous droits réservés
   </footer>
-
-  <script>
-    function toggleMenu(){
-      document.getElementById('mobileNav').classList.toggle('show');
-    }
-
-    function filterPresets(category){
-      const buttons = document.querySelectorAll('.filter-btn');
-      buttons.forEach(btn => btn.classList.remove('active'));
-      event.target.classList.add('active');
-
-      const cards = document.querySelectorAll('#presetGrid .card');
-      cards.forEach(card=>{
-        if(category === 'all'){
-          card.classList.remove('hidden');
-        }else{
-          card.classList.toggle('hidden', !card.classList.contains(category));
-        }
-      });
-    }
-  </script>
+  <script src="script.js"></script>
 </body>
 </html>
